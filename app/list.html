@@ -11,9 +11,17 @@
         <p>Your Results will appear here</p>
     </div>
 
-    <ul ng-if="vm.list.length">
-        <li ng-repeat="item in vm.list">
-            {{item.type}} : {{item.name}}
+    <ul class="list" ng-if="vm.list.length">
+        <li class="list-item" ng-repeat="item in vm.list">
+            <div class="list-img">
+                <img ng-src="{{item.images[0].url}}"/>
+            </div>
+            <div class="type-icon">
+                <img width="40" ng-src="{{item.type == 'album' ? 'assets/images/album-icon@2x.png' : 'assets/images/artist-icon@2x.png'}}"/>
+            </div>
+            <div class="list-name">
+                <p>{{item.name}}</p>
+            </div>
         </li>
     </ul>
 </div>

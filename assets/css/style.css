@@ -93,6 +93,45 @@ body {
     font-size: 22px
 }
 
+.list {
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.list-item {
+    height: 20pc;
+    width: 17pc;
+    display: inline-block;
+    margin: 3pc 1pc;
+    box-shadow: 0 0 25px -5px;
+}
+
+.list-item .type-icon {
+    width: 40px;
+    margin: -57px 10px;
+}
+
+.list-item .list-img img {
+    height: 17pc;
+    width: 17pc;
+    border-radius: 5px 5px 0 0;
+}
+
+.list-item .list-name{
+    height: 5pc;
+    width: 17pc;
+    background: white;
+    margin-top: 60px;
+    border-radius: 0 0 5px 5px;
+}
+
+.list-item .list-name p{
+    float: left;
+    font-size: 18px;
+    margin: 30px 26px;
+}
+
 .footer {
     color: white;
     text-align: center;
