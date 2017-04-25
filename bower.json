@@ -1,0 +1,17 @@
+{
+  "name": "music-search",
+  "authors": [
+    "Mohammad Kashif Sulaiman <m.kqagraphix@gmail.com>"
+  ],
+  "description": "A task for music/artist search",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
