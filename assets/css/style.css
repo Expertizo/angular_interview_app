@@ -1,12 +1,18 @@
+@font-face {
+    font-family: RalewayMedium;
+    src: url(../fonts/Raleway-Medium.ttf);
+}
+
 body {
     background: #353740;
+    font-family: RalewayMedium;
 }
 
 .cover{
     text-align: center;
     margin: auto;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    height: 50pc;
     background: #cd1274;
 }
 
@@ -20,20 +26,21 @@ body {
 }
 
 .cover .header-items {
-    height: 145px;
+    height: 170px;
     width: 100% ;
 }
 
 .cover .header-items img {
     float: left;
-    width: 5%;
-    margin: 20px;
+    width: 85px;
+    margin: 30px 40px;
 }
 
 .cover .header-items p {
     float: right;
-    margin: 20px;
+    margin: 40px 57px;
     color: white;
+    font-size: 19px;
 }
 
 .search-field {
@@ -64,11 +71,12 @@ body {
 }
 
 .arrow img {
+    padding-top: 6pc;
     width: 60px;
 }
 
 .no-search {
-    width: 80%;
+    width: 90%;
     text-align: center;
     margin: auto;
     background: #3c3f4e;
