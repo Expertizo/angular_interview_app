@@ -13,7 +13,7 @@ function ListController( $http, listService ) {
 
     function getList() {
         listService.getList(vm.query).then(function (data) {
-            console.log(data);
+            vm.list = data;
         })
     }
 }

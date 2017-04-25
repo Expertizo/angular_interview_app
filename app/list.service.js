@@ -11,12 +11,18 @@ function listService( $http, $q ) {
     };
 
     function getList(query) {
-        var ref = 'https://api.spotify.com/v1/search?q='+query+'*&type=artist';
-        var ref2 = 'https://api.spotify.com/v1/search?q='+query+'*&type=album';
+        var ref = 'https://api.spotify.com/v1/search?q='+query+'*&type=artist',
+            ref2 = 'https://api.spotify.com/v1/search?q='+query+'*&type=album',
+            artistsList, albumsList;
 
         return $q.when($http.get(ref)).then(function(artists) {
+
             return $q.when($http.get(ref2)).then(function(albums) {
-                return {artists: artists.data.artists.items, albums: albums.data.albums.items};
+
+                artistsList = artists.data.artists.items;
+                albumsList =  albums.data.albums.items;
+
+                return _.sortBy(_.union(artistsList, albumsList), 'name');
             })
         })
     }
