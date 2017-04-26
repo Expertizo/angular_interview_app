@@ -11,13 +11,14 @@ function ListController( $http, listService ) {
     vm.openModal = openModal;
     vm.closeModal = closeModal;
     vm.loadMore = loadMore;
-    vm.limit = 8;
-    vm.offset = 0;
     vm.query = '';
 
 
     function getList() {
         vm.loading = true;
+        vm.limit = 8;
+        vm.offset = 0;
+        vm.list = [];
         vm.noData = false;
         listService.getList(vm.query, vm.limit, vm.offset).then(function (data) {
             vm.offset += vm.limit;
