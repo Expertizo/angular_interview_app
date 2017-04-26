@@ -4,7 +4,7 @@
             <div class="cover-img">
                 <img ng-src="{{vm.showModal.images.length ? vm.showModal.images[0].url : 'assets/images/no-image-placeholder.png'}}"/>
             </div>
-            <div class="close" ng-click="vm.showModal = false;">&times;</div>
+            <div class="close" ng-click="vm.closeModal()">&times;</div>
             <div class="title">
                 <p>{{vm.showModal.name}}</p>
             </div>
@@ -26,7 +26,7 @@
                 </li>
                 <li ng-if="vm.showModal.tracks.length" ng-repeat="item in vm.showModal.tracks">
                     <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}" height="100" width="100"/>
-                    {{item.name}}
+                    <span>{{item.name}}</span>
                 </li>
             </ul>
         </div>

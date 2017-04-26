@@ -12,9 +12,9 @@ function listService( $http, $q ) {
         getTracks: getTracks
     };
 
-    function getList(query) {
-        var ref = 'https://api.spotify.com/v1/search?q='+query+'*&type=artist',
-            ref2 = 'https://api.spotify.com/v1/search?q='+query+'*&type=album',
+    function getList(query, limit, offset) {
+        var ref = 'https://api.spotify.com/v1/search?q=' + query + '*&type=artist&offset=' + offset / 2 + '&limit=' + limit / 2,
+            ref2 = 'https://api.spotify.com/v1/search?q=' + query + '*&type=album&offset=' + offset / 2+ '&limit=' + limit / 2,
             artistsList, albumsList;
 
         return $q.when($http.get(ref)).then(function(artists) {

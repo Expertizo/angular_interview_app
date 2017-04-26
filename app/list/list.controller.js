@@ -9,21 +9,34 @@ function ListController( $http, listService ) {
 
     vm.getList = getList;
     vm.openModal = openModal;
+    vm.closeModal = closeModal;
+    vm.loadMore = loadMore;
+    vm.limit = 8;
+    vm.offset = 0;
     vm.query = '';
 
 
     function getList() {
         vm.loading = true;
         vm.noData = false;
-        listService.getList(vm.query).then(function (data) {
+        listService.getList(vm.query, vm.limit, vm.offset).then(function (data) {
+            vm.offset += vm.limit;
             vm.list = data;
             vm.loading = false;
             vm.noData = !data.length;
         })
     }
 
+    function loadMore() {
+        listService.getList(vm.query, vm.limit, vm.offset).then(function (data) {
+            if(data.length) {
+                vm.offset += vm.limit;
+                vm.list = vm.list.concat(data);
+            }
+        })
+    }
+
     function getAlbums(id) {
-        console.log(listService);
         vm.modalLoading = true;
         listService.getAlbums(id).then(function(data) {
             vm.modalLoading = false;
@@ -48,7 +61,7 @@ function ListController( $http, listService ) {
         vm.showModal = item;
     }
 
-    function closeModal(item) {
+    function closeModal($event) {
         vm.showModal = false;
     }
 }

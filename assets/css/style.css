@@ -56,6 +56,19 @@ body input {
     width: 35%;
 }
 
+.button {
+    height: 43px;
+    font-size: 18px;
+    width: 181px;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    background: #cd1274;
+    text-align: center;
+    display: block;
+    margin: 60px auto;
+}
+
 .search-field input {
     border: none;
     float: left;
