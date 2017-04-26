@@ -8,6 +8,10 @@ body {
     font-family: RalewayMedium;
 }
 
+body input {
+    outline: none;
+}
+
 .cover{
     text-align: center;
     margin: -10px auto;

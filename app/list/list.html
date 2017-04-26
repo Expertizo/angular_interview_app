@@ -21,7 +21,7 @@
     <ul class="list" ng-if="vm.list.length && !vm.loading">
         <li class="list-item" ng-repeat="item in vm.list">
             <div class="list-img">
-                <img ng-src="{{item.images[0].url}}"/>
+                <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}"/>
             </div>
             <div class="type-icon">
                 <img width="40" ng-src="{{item.type == 'album' ? 'assets/images/album-icon@2x.png' : 'assets/images/artist-icon@2x.png'}}"/>
