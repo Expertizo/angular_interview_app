@@ -12,8 +12,12 @@ function ListController( $http, listService ) {
 
 
     function getList() {
+        vm.loading = true;
+        vm.noData = false;
         listService.getList(vm.query).then(function (data) {
             vm.list = data;
+            vm.loading = false;
+            vm.noData = !data.length;
         })
     }
 }

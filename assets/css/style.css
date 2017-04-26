@@ -75,6 +75,18 @@ body {
     width: 60px;
 }
 
+.loading {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    height: 400px;
+}
+
+.loading img {
+    width: 400px;
+    height: 400px;
+}
+
 .no-search {
     width: 90%;
     text-align: center;

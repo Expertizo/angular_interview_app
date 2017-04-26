@@ -6,14 +6,19 @@
         </div>
     </form>
 
-    <div class="no-search" ng-if="!vm.list.length">
+    <div class="no-search" ng-if="!vm.list.length && !vm.loading">
         <div>
             <img src="assets/images/Magnify@2x.png" />
         </div>
-        <p>Your Results will appear here</p>
+        <p ng-if="!vm.noData">Your Results will appear here</p>
+        <p ng-if="vm.noData">Sorry! Nothing found</p>
     </div>
 
-    <ul class="list" ng-if="vm.list.length">
+    <div class="loading" ng-if="vm.loading">
+        <img src="assets/images/audio-loading-bar.gif" />
+    </div>
+
+    <ul class="list" ng-if="vm.list.length && !vm.loading">
         <li class="list-item" ng-repeat="item in vm.list">
             <div class="list-img">
                 <img ng-src="{{item.images[0].url}}"/>
