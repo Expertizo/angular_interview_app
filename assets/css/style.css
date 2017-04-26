@@ -185,6 +185,86 @@ body input {
     width: 14pc;
 }
 
+.modal {
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 45pc;
+    height: auto;
+}
+
+.modal-content .cover-img {
+    height: 20pc;
+    overflow: hidden;
+}
+
+.modal-content .cover-img img {
+    width: 100%;
+}
+
+.modal-content .close {
+    margin-top: -20pc;
+    margin-left: 41pc;
+    font-size: 60px;
+    color: white;
+}
+
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content .header .title {
+    margin-top: 12pc;
+    margin-left: 2pc;
+}
+
+.modal-content .header .title p {
+    width: 39pc;
+    overflow: hidden;
+    text-shadow: 0 0 3px black;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modal-content .body {
+    padding: 1pc 2pc;
+}
+
+.modal-content .body .loading-items {
+    margin: auto;
+    text-align: center;
+}
+
+.modal-content ul {
+    padding: 10px 0;
+}
+
+.modal-content ul li {
+    margin: 10px 0;
+}
+
+
+.modal-content ul li img {
+    vertical-align: middle;
+}
+
 .footer {
     color: white;
     text-align: center;

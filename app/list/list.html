@@ -19,7 +19,7 @@
     </div>
 
     <ul class="list" ng-if="vm.list.length && !vm.loading">
-        <li class="list-item" ng-repeat="item in vm.list">
+        <li class="list-item" ng-click="vm.openModal(item)" ng-repeat="item in vm.list">
             <div class="list-img">
                 <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}"/>
             </div>
@@ -35,4 +35,6 @@
             </div>
         </li>
     </ul>
+
+    <ng-include ng-if="!!vm.showModal" src="'app/list/modal.html'"></ng-include>
 </div>

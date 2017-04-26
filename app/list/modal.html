@@ -1,0 +1,34 @@
+<div class="modal">
+    <div class="modal-content">
+        <div class="header">
+            <div class="cover-img">
+                <img ng-src="{{vm.showModal.images.length ? vm.showModal.images[0].url : 'assets/images/no-image-placeholder.png'}}"/>
+            </div>
+            <div class="close" ng-click="vm.showModal = false;">&times;</div>
+            <div class="title">
+                <p>{{vm.showModal.name}}</p>
+            </div>
+        </div>
+        <div class="body">
+            <div class="title">
+                {{vm.showModal.type == "album" ? 'Tracks' : 'Albums'}}
+            </div>
+
+            <hr />
+
+            <div class="loading-items" ng-if="vm.modalLoading">
+                <img src="assets/images/loading.gif" width="40" height="40"/>
+            </div>
+            <ul type="none">
+                <li ng-if="vm.showModal.albums.length" ng-repeat="item in vm.showModal.albums">
+                    <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}" height="100" width="100"/>
+                    <span>{{item.name}}</span>
+                </li>
+                <li ng-if="vm.showModal.tracks.length" ng-repeat="item in vm.showModal.tracks">
+                    <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}" height="100" width="100"/>
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
