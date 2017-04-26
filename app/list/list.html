@@ -1,8 +1,10 @@
 <div ng-controller="ListController as vm">
-    <div class="search-field">
-        <input ng-model="vm.query" placeholder="Search for artist or album title"/>
-        <button ng-click="vm.getList()">Search</button>
-    </div>
+    <form ng-submit="vm.getList()">
+        <div class="search-field">
+            <input ng-model="vm.query" placeholder="Search for artist or album title"/>
+            <input class="submit" type="submit" value="Search"/>
+        </div>
+    </form>
 
     <div class="no-search" ng-if="!vm.list.length">
         <div>

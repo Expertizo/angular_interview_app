@@ -8,21 +8,22 @@
 <body>
 <div ng-app="app">
 
-    <ng-include src="'app/header.html'"></ng-include>
+    <ng-include src="'app/header/header.html'"></ng-include>
 
-    <ng-include src="'app/list.html'"></ng-include>
+    <ng-include src="'app/list/list.html'"></ng-include>
 
-    <ng-include src="'app/footer.html'"></ng-include>
+    <ng-include src="'app/footer/footer.html'"></ng-include>
 
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 <link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/animations.css" rel="stylesheet"/>
 
 <script src="app/app.module.js"></script>
-<script src="app/list.controller.js"></script>
-<script src="app/list.service.js"></script>
+<script src="app/list/list.controller.js"></script>
+<script src="app/list/list.service.js"></script>
 
 </body>
 </html>
