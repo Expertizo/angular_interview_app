@@ -23,6 +23,10 @@
             <div class="list-img">
                 <img ng-src="{{item.images.length ? item.images[0].url : 'assets/images/no-image-placeholder.png'}}"/>
             </div>
+            <div class="hover-item" style="opacity: 0;">
+                <img src="assets/images/Bitmap@2x.png"/>
+                <p>{{item.type == "album" ? 'View Tracks' : 'View Albums'}}</p>
+            </div>
             <div class="type-icon">
                 <img width="40" ng-src="{{item.type == 'album' ? 'assets/images/album-icon@2x.png' : 'assets/images/artist-icon@2x.png'}}"/>
             </div>
