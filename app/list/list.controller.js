@@ -14,6 +14,11 @@ function ListController( $http, listService ) {
     vm.query = '';
 
 
+    /**
+     * Triggered when the search button is click or on enter key press
+     *
+     * @return void
+     */
     function getList() {
         vm.loading = true;
         vm.limit = 8;
@@ -28,6 +33,11 @@ function ListController( $http, listService ) {
         })
     }
 
+    /**
+     * Triggered when the load more button is click
+     *
+     * @return void
+     */
     function loadMore() {
         listService.getList(vm.query, vm.limit, vm.offset).then(function (data) {
             if(data.length) {
@@ -37,6 +47,13 @@ function ListController( $http, listService ) {
         })
     }
 
+    /**
+     * Triggered when the modal is opened
+     *
+     * @params id String
+     *
+     * @return void
+     */
     function getAlbums(id) {
         vm.modalLoading = true;
         listService.getAlbums(id).then(function(data) {
@@ -45,6 +62,13 @@ function ListController( $http, listService ) {
         })
     }
 
+    /**
+     * Triggered when the modal is opened
+     *
+     * @params id String
+     *
+     * @return void
+     */
     function getTracks(id) {
         vm.modalLoading = true;
         listService.getTracks(id).then(function(data) {
@@ -53,6 +77,14 @@ function ListController( $http, listService ) {
         })
     }
 
+
+    /**
+     * Triggered when a list item is clicked
+     *
+     * @params item Object
+     *
+     * @return void
+     */
     function openModal(item) {
         if(item.type == "artist"){
             getAlbums(item.id);
@@ -62,6 +94,13 @@ function ListController( $http, listService ) {
         vm.showModal = item;
     }
 
+    /**
+     * Triggered when the modal close button is clicked
+     *
+     * @params $event {Angular Event Object}
+     *
+     * @return void
+     */
     function closeModal($event) {
         vm.showModal = false;
     }

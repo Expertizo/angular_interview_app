@@ -12,6 +12,15 @@ function listService( $http, $q ) {
         getTracks: getTracks
     };
 
+    /**
+     * Gets the limited list of albums/artists
+     *
+     * @params query String
+     * @params limit Number
+     * @params offset Number
+     *
+     * @return {Promise} promise returning array of lists
+     */
     function getList(query, limit, offset) {
         var ref = 'https://api.spotify.com/v1/search?q=' + query + '*&type=artist&offset=' + offset / 2 + '&limit=' + limit / 2,
             ref2 = 'https://api.spotify.com/v1/search?q=' + query + '*&type=album&offset=' + offset / 2+ '&limit=' + limit / 2,
@@ -29,6 +38,13 @@ function listService( $http, $q ) {
         })
     }
 
+    /**
+     * Gets the list of albums
+     *
+     * @params id String
+     *
+     * @return {Promise} promise returning array of lists
+     */
     function getAlbums(id) {
         var ref = 'https://api.spotify.com/v1/artists/' + id + '/albums';
 
@@ -39,6 +55,13 @@ function listService( $http, $q ) {
         })
     }
 
+    /**
+     * Gets the list of tracks
+     *
+     * @params id String
+     *
+     * @return {Promise} promise returning array of lists
+     */
     function getTracks(id) {
         var ref = 'https://api.spotify.com/v1/albums/' + id + '/tracks';
 
