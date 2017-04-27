@@ -36,7 +36,7 @@
         </li>
     </ul>
 
-    <input ng-if="vm.list.length == vm.offset" class="button" id="load-more" type="button" value="SHOW ME MORE!" ng-click="vm.loadMore()"/>
+    <input ng-if="vm.list.length && vm.list.length == vm.offset" class="button" id="load-more" type="button" value="SHOW ME MORE!" ng-click="vm.loadMore()"/>
 
     <ng-include ng-if="!!vm.showModal" src="'app/list/modal.html'"></ng-include>
 </div>
